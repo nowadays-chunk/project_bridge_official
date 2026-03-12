@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f2eb;
+  --foreground: #171513;
+  --surface: rgba(255, 252, 247, 0.8);
+  --surface-subtle: rgba(255, 255, 255, 0.46);
+  --border: rgba(48, 42, 35, 0.12);
+  --border-strong: rgba(48, 42, 35, 0.2);
+  --muted: #6f665d;
+  --secondary: #2a2520;
+  --accent: #9c876f;
+}
+
+.dark {
+  --background: #121315;
+  --foreground: #f1ebe3;
+  --surface: rgba(29, 31, 35, 0.82);
+  --surface-subtle: rgba(255, 255, 255, 0.03);
+  --border: rgba(234, 227, 219, 0.08);
+  --border-strong: rgba(234, 227, 219, 0.14);
+  --muted: #a19a91;
+  --secondary: #e6dfd7;
+  --accent: #c4b8a4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-line-soft: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-muted: var(--muted);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 18rem),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18rem),
+    var(--background);
+}
+
+a,
+button {
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--foreground);
+}
+
+.surface-panel {
+  position: relative;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.34),
+      rgba(255, 255, 255, 0.08)
+    ),
+    var(--surface);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow:
+    0 14px 40px rgba(15, 15, 15, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+}
+
+.surface-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    transparent 28%,
+    transparent 72%,
+    rgba(255, 255, 255, 0.08)
+  );
+}
+
+.dark .surface-panel {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0)
+    ),
+    var(--surface);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
