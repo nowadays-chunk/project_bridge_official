@@ -38,7 +38,7 @@ export default function ContactPage() {
           <div className="grid gap-4 md:grid-cols-3">
             <InfoCard className="rounded-[2rem] px-6 py-6">
               <p className="text-base leading-8 text-secondary">
-                Software Development &amp; Engineering LLC
+                Software Development &amp; Engineering
               </p>
             </InfoCard>
             <InfoCard className="rounded-[2rem] px-6 py-6">

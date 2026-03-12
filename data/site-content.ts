@@ -355,7 +355,7 @@ export const philosophyContent = {
 };
 
 export const companyItems = [
-  "Software Development & Engineering LLC",
+  "Software Development & Engineering",
   "Coding Unleashed LLC",
   "Hamza El Jaouhari",
 ];
