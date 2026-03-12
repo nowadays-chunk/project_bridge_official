@@ -23,7 +23,7 @@ export default function ContactPage() {
           <div className="surface-panel px-6 py-10 sm:px-10 sm:py-14">
             <p className="max-w-3xl text-lg leading-8 text-muted">
               Project Bridge is shaped through Software Development &amp;
-              Engineering LLC, Coding Unleashed LLC, and the direction of Hamza
+              Engineering, Coding Unleashed LLC, and the direction of Hamza
               El Jaouhari.
             </p>
           </div>
