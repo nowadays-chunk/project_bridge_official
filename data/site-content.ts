@@ -166,7 +166,7 @@ export const industries: IndustryItem[] = [
       {
         slug: "consultant-os",
         name: "Consultant OS",
-        href: "consltancy.projectbridge.space",
+        href: "consultancy.projectbridge.space",
         summary:
           "An operating environment for consultancy workflows, decision structure, and service clarity.",
         shaping: [
